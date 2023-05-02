@@ -2,4 +2,8 @@
 
 <mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd"></mule>
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+	<flow name="testFlow" doc:id="5928ba73-0bdf-4a42-be3c-e365da7a8863" >
+		<set-payload value="#[payload]" doc:name="Set Payload" doc:id="2e57714f-6531-4986-87d0-3225cd18c624" />
+	</flow>
+</mule>
