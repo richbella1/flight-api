@@ -8,7 +8,7 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 		<http:listener-connection host="0.0.0.0" port="8080" />
 	</http:listener-config>
 	<flow name="flight" doc:id="5928ba73-0bdf-4a42-be3c-e365da7a8863" >
-		<http:listener doc:name="Listener" doc:id="e8d18777-d7c2-463c-8904-c6e6dd1f21c1" config-ref="HTTP_Listener_config" path="/flight"/>
-		<set-payload value="#[payload]" doc:name="Set Payload" doc:id="2e57714f-6531-4986-87d0-3225cd18c624" />
+		<http:listener doc:name="/flights" doc:id="e8d18777-d7c2-463c-8904-c6e6dd1f21c1" config-ref="HTTP_Listener_config" path="/flight"/>
+		<set-payload doc:name="Set Payload" doc:id="305fbafe-91e9-4c5c-b4bf-6b9b5321b086" value='#[output json --- "flight data"]'/>
 	</flow>
 </mule>
