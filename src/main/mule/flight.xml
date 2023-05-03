@@ -4,8 +4,11 @@
 	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
-	<flow name="testFlow" doc:id="5928ba73-0bdf-4a42-be3c-e365da7a8863" >
-		<http:listener doc:name="Listener" doc:id="ac73df7a-ac30-442e-b2b8-c0dee390a20a" />
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="7fc54b34-8e09-41f0-8483-5c6784ce764c" >
+		<http:listener-connection host="0.0.0.0" port="8080" />
+	</http:listener-config>
+	<flow name="flight" doc:id="5928ba73-0bdf-4a42-be3c-e365da7a8863" >
+		<http:listener doc:name="Listener" doc:id="e8d18777-d7c2-463c-8904-c6e6dd1f21c1" config-ref="HTTP_Listener_config" path="/flight"/>
 		<set-payload value="#[payload]" doc:name="Set Payload" doc:id="2e57714f-6531-4986-87d0-3225cd18c624" />
 	</flow>
 </mule>
